@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,italic");
+
+@font-face {
+    font-family: 'Ethnocentric';
+    src: url('./public/fonts/ethnocentric.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0; 
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+header h1 {
+    padding: 0.5rem;
+    background: url('./public/logo-bg.svg') no-repeat center center/cover;
+}
+
+header h1 {
+    animation: dance 1.5s ease-in infinite;
+}
+
+header h1:hover {
+    animation: none;
+    cursor: pointer;
+}
+
+@keyframes dance {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-2px);
+        opacity: 0.5;
+    }
+}
+
+header h1 img{
+    width: 75px;
+    aspect-ratio: 16 / 9;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-right: 1rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+#menu header nav ul li a {
+    color: #000;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+#home .landing {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+
+    font-weight: 600;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./public/landing.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+}
+
+#home .landing h1 {
+    font-size: 4rem;
+    letter-spacing: 2px;
+}
+
+#home .landing h2 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+#home .landing button {
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+
+    border: none;
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#menu header {
+    position: relative;
+}
+
+#menu main {
+    padding: 1.5rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: 1.5rem;
+}
+
+#menu main img {
+    max-width: 45vw;
+    aspect-ratio: 11 / 16;
+}
+
+
+@media screen and (max-width: 768px) {
+    #menu main {
+        grid-auto-flow: column;
+        overflow-x: auto;
+        scrollbar-width: none; 
+        -ms-overflow-style: none;
+    }
+
+    #menu main::-webkit-scrollbar {
+        display: none;
+    }
+
+    #menu main img {
+        max-width: 100vw;
+    }
+
+    #home .landing h1 {
+        font-size: 3rem;
+    }
+
+    #home .landing h2 {
+        font-size: 1.5rem;
+    }
+}
